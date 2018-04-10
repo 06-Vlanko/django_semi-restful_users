@@ -1,0 +1,10 @@
+
+#wrapper {
+    margin: 20px;
+}
+label {
+    width: 100px;
+}
+input[type=text] {
+    width: 300px;
+}

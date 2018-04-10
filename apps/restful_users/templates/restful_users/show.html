@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'restful_users/skeleton.css' %}">
+        <link rel="stylesheet" href="{% static 'restful_users/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'restful_users/style.css' %}">
+        <title>Users</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>User {{user.id}}</h1>
+            <p>Full Name: {{user.getFullName}}</p>
+            <p>Email: {{user.email}}</p>
+            <p>Created at: {{user.created_at}}</p>
+            <p><a href="/users/{{user.id}}/edit">Edit</a> | <a href="/users/{{user.id}}/destroy">Delete</a></p>
+        </div>
+    </body>
+</html>

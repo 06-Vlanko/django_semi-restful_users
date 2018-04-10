@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'restful_users/skeleton.css' %}">
+        <link rel="stylesheet" href="{% static 'restful_users/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'restful_users/style.css' %}">
+        <title>Users</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Edit User {{user.id}}</h1>
+            <form action="/users/update/" method="post">
+                {% csrf_token %}
+                <p>
+                    <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name" value="{{user.first_name}}">
+                </p>
+                <p>
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" name="last_name" value="{{user.last_name}}">
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" value="{{user.email}}">
+                </p>
+                <input type="hidden" name='user_id' value={{user.id}}>
+                <input type="submit" value="Update">
+            </form>
+            <p><a href="/users/{{user.id}}/">Show</a> | <a href="/users/">Go Back</a></p>
+        </div>
+    </body>
+</html>
