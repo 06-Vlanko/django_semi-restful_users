@@ -13,6 +13,7 @@ def index (request):
     users = { 
         'users': User.objects.all()
         }
+    print "test_branch"    
     return render (request, 'restful_users/index.html', users)
 
 def new(request):
